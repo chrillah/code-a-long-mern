@@ -5,7 +5,7 @@ import {getCars, createCar} from './db/models/carController'
 
 import {connect} from 'mongoose'
 
-connect('mongodb://localhost:27017/test')
+connect('mongodb://127.0.0.1:27017/test')
 
 const app = express()
 
@@ -17,6 +17,7 @@ app.use('/car', carRouter)
 
 app.get('/car' , async(req:Request, res:Response)=>{
     const cars = await getCars()
+    console.log(cars)
     res.json(cars)
 })
 
