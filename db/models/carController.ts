@@ -6,6 +6,7 @@ export const createCar = async (Car: carType) =>{
     await newCar.save()
     return newCar
 }
+
 export const getCars = async ()=>{
     const Cars = await CarModel.find()
     return Cars
